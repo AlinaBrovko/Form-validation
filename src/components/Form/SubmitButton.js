@@ -2,14 +2,14 @@ import { useFormikContext } from "formik";
 import React from "react";
 
 export default function SubmitButton() {
-  const formik = useFormikContext();
+  const { isSubmitting } = useFormikContext();
   return (
     <button
       type="submit"
-      className={"btn" + (formik.isSubmitting ? " submitting" : "")}
-      disabled={formik.isSubmitting}
+      className={"btn" + (isSubmitting ? " submitting" : "")}
+      disabled={isSubmitting}
     >
-      {formik.isSubmitting ? "Submitting" : "Submit"}
+      {isSubmitting ? "Submitting" : "Submit"}
       <span />
     </button>
   );
