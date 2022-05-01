@@ -1,0 +1,101 @@
+.user {
+  width: 90%;
+  max-width: 340px;
+  margin: 20px auto;
+}
+
+.form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.form.error {
+  animation: NO 1s ease-in-out;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.form_input {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  transition: 0.3s;
+}
+
+.form_input:focus {
+  background: rgb(230, 230, 230);
+}
+
+.error-message {
+  background-color: white;
+  color: red;
+  padding-left: 20px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  color: white;
+  background: #aba194;
+  transition: 0.3s;
+}
+
+.btn:hover,
+.btn:disabled {
+  background: #999084;
+}
+
+.btn.submitting span::before {
+  animation: dots 2s linear infinite;
+  content: "";
+}
+
+@keyframes NO {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60% {
+    content: "...";
+  }
+  90%,
+  100% {
+    content: "";
+  }
+}
